@@ -223,15 +223,7 @@
       margin-bottom: 28px;
     }
 
-    /* === HUBSPOT FORM STYLING === */
-    .hs-form-container {
-      /* HubSpot embed goes here */
-    }
-
-    /* Style overrides for HubSpot forms */
-    .form-section .hs-form-field {
-      margin-bottom: 18px;
-    }
+    /* === FORM FIELDS === */
     .form-section label {
       display: block;
       font-family: 'Oswald', sans-serif;
@@ -243,8 +235,7 @@
     }
     .form-section input[type="text"],
     .form-section input[type="email"],
-    .form-section input[type="tel"],
-    .form-section select {
+    .form-section input[type="tel"] {
       width: 100%;
       background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
@@ -256,79 +247,15 @@
       transition: border-color 0.2s, background 0.2s;
       outline: none;
     }
-    .form-section input:focus,
-    .form-section select:focus {
+    .form-section input:focus {
       border-color: var(--accent);
       background: rgba(200,16,46,0.04);
     }
-    .form-section select {
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%239b9890' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      padding-right: 40px;
-      cursor: pointer;
-    }
-    .form-section select option {
-      background: var(--dark-surface);
-      color: var(--text);
-    }
-    .form-section .hs-submit {
-      margin-top: 8px;
-    }
-    .form-section input[type="submit"],
-    .form-section button[type="submit"],
-    .form-section .hs-button {
-      width: 100%;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      padding: 16px 32px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .form-section input[type="submit"]:hover,
-    .form-section button[type="submit"]:hover,
-    .form-section .hs-button:hover {
-      background: var(--accent-dark);
-    }
-    .form-section input[type="submit"]:active,
-    .form-section button[type="submit"]:active,
-    .form-section .hs-button:active {
-      transform: scale(0.99);
-    }
-
-    /* === PLACEHOLDER FORM (replace with HubSpot embed) === */
     .placeholder-form .field { margin-bottom: 18px; }
     .placeholder-form .field-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
-    }
-    .placeholder-form .btn-submit {
-      width: 100%;
-      background: var(--accent);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      padding: 16px 32px;
-      font-family: 'Oswald', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s;
-      margin-top: 8px;
-    }
-    .placeholder-form .btn-submit:hover {
-      background: var(--accent-dark);
     }
 
     /* === LIMITED SPOTS === */
@@ -364,72 +291,6 @@
     /* === CALENDAR PICKER === */
     .calendar-picker {
       margin-top: 4px;
-    }
-    .cal-header {
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    .cal-month {
-      font-family: 'Oswald', sans-serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--white);
-      letter-spacing: 0.02em;
-    }
-    .cal-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      text-align: center;
-    }
-    .cal-days {
-      margin-bottom: 12px;
-    }
-    .cal-days span {
-      font-family: 'Oswald', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-    }
-    .cal-dates {
-      row-gap: 6px;
-    }
-    .cal-day, .cal-empty {
-      padding: 10px 0;
-      font-family: 'Oswald', sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text);
-      border-radius: 8px;
-    }
-    .cal-day.dim {
-      color: rgba(255,255,255,0.22);
-    }
-    .cal-day.active {
-      background: var(--accent);
-      color: var(--white);
-      font-weight: 700;
-      cursor: pointer;
-      position: relative;
-      animation: glowPulse 2.5s ease infinite;
-    }
-    .cal-day.active:hover {
-      background: var(--accent-dark);
-    }
-    .cal-day.active::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-    @keyframes glowPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(200,16,46,0); }
-      50% { box-shadow: 0 0 0 6px rgba(200,16,46,0.15); }
     }
 
     /* === TIME SLOTS === */
@@ -604,7 +465,26 @@
       font-weight: 600;
     }
 
-    /* === SUBMIT BUTTON STATES === */
+    /* === SUBMIT BUTTON === */
+    .btn-submit {
+      width: 100%;
+      font-weight: 600;
+      background-color: var(--accent);
+      color: white;
+      padding: 0.75em 2.3em 0.75em 1em;
+      border-radius: 100px;
+      border: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+    .btn-submit:hover {
+      background-color: var(--accent-dark);
+    }
     .btn-submit:disabled {
       opacity: 0.6;
       cursor: not-allowed;
@@ -655,12 +535,6 @@
       color: var(--gold);
     }
 
-    @media (max-width: 600px) {
-      .time-slots-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
     /* === ANIMATIONS === */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -682,6 +556,9 @@
       .placeholder-form .field-row {
         grid-template-columns: 1fr;
         gap: 0;
+      }
+      .time-slots-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -741,28 +618,7 @@
       <h2>Reserve Your Time Slot</h2>
       <p class="form-subtitle">Select a 20-minute window for your blood draw</p>
 
-      <!--
-        =============================================
-        HUBSPOT FORM EMBED - Replace the placeholder
-        form below with your HubSpot embed script:
-
-        <script charset="utf-8" type="text/javascript"
-          src="//js.hsforms.net/forms/embed/v2.js"></script>
-        <script>
-          hbspt.forms.create({
-            region: "na1",
-            portalId: "YOUR_PORTAL_ID",
-            formId: "YOUR_FORM_ID",
-            target: ".hs-form-container"
-          });
-        </script>
-        =============================================
-      -->
-      <div class="hs-form-container">
-        <!-- HubSpot form will render here -->
-      </div>
-
-      <!-- Calendar-style time slot picker -->
+      <!-- Time slot picker (fetches availability from HubSpot meetings-public API) -->
       <div class="calendar-picker">
         <!-- Time Slots (populated dynamically from HubSpot) -->
         <div class="time-slots visible" id="timeSlots">
@@ -824,8 +680,17 @@
       slug: "ben-weiner99/event-valor-elite-training",
       timezone: "America/Denver",
       targetDate: "2026-04-18",
-      monthOffset: 1,     // April 2026 (1 month from current March)
     };
+
+    // Calculate monthOffset dynamically from targetDate so it doesn't
+    // break when the current month changes.
+    (function () {
+      if (!MEETING_CONFIG.targetDate) { MEETING_CONFIG.monthOffset = 0; return; }
+      const now = new Date();
+      const [y, m] = MEETING_CONFIG.targetDate.split('-').map(Number);
+      MEETING_CONFIG.monthOffset = (y - now.getFullYear()) * 12 + (m - 1 - now.getMonth());
+      if (MEETING_CONFIG.monthOffset < 0) MEETING_CONFIG.monthOffset = 0;
+    })();
 
     // In production (on connect.crhormonehealth.com), call HubSpot directly.
     // In local dev, proxy through the dev server to avoid HubSpot 483 origin check.
@@ -1018,7 +883,7 @@
         durationMs: parseInt(btn.dataset.duration),
       };
 
-      selectedTimeBadge.innerHTML = formatDateHeading(dateStr) + ' at <strong>' + timeLabel + '</strong>';
+      selectedTimeBadge.innerHTML = escapeHtml(formatDateHeading(dateStr)) + ' at <strong>' + escapeHtml(timeLabel) + '</strong>';
       contactForm.classList.add('visible');
 
       setTimeout(() => {
