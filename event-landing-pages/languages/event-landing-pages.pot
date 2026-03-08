@@ -1,0 +1,322 @@
+# Copyright (C) 2026 Cameron Fulton
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Event Landing Pages 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-07 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Admin/AdminNotices.php
+msgid "Event Landing Pages requires Advanced Custom Fields (ACF) to be installed and active."
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Event Landing Pages Settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Global Settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "API"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "HubSpot API Key"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Encrypted at rest. Used for server-side HubSpot API calls."
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Default Timezone"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Default Brand"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Brand Name"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Brand Logo"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Brand Website"
+msgstr ""
+
+#: src/Admin/SettingsPage.php
+msgid "Invert Logo (dark background)"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "Events"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "Event"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "Add New Event"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "Edit Event"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "New Event"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "View Event"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "Search Events"
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "No events found."
+msgstr ""
+
+#: src/PostType/EventPostType.php
+msgid "No events found in Trash."
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Configuration"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Brand"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Use Global Brand Defaults"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "When enabled, uses the brand settings from the global settings page."
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Partner"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Has Partner"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Partner Name"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Partner Website"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Partner Logo"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Partner Address"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Details"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Start"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event End"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Location Name"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Location Address"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Price"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Price Label"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Badge Text"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Duration Label"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Description"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Event Image"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "CTA Button Label"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Confirmation Message"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Booking"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Booking Method"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Time Slot Picker"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "HubSpot Form"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "HubSpot Meeting Slug"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Target Date"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Only show time slots for this specific date."
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "HubSpot Portal ID"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "HubSpot Form ID"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "URL"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Custom Slug"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Override the default URL slug for this event."
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Colors"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Colors inherit from your theme's CSS custom properties by default. Only set values here to override for this specific event."
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Accent"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Accent Dark"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Background"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Surface"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Text"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Text Muted"
+msgstr ""
+
+#: src/ACF/FieldGroups.php
+msgid "Gold / Highlight"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Loading available times..."
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Checking availability..."
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "First Name"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Last Name"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Email"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Phone Number"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Limited availability"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "secure yours today."
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Date"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Location"
+msgstr ""
+
+#: templates/single-elp_event.php
+msgid "Time Slots"
+msgstr ""

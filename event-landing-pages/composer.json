@@ -1,0 +1,13 @@
+{
+    "name": "event-landing-pages/event-landing-pages",
+    "description": "Create and manage event landing pages with HubSpot integration.",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "EventLandingPages\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
