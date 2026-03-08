@@ -18,16 +18,36 @@
   --elp-text-muted: #9b9890;
   --elp-white: #ffffff;
   --elp-border: rgba(255,255,255,0.08);
+  --elp-font-heading: inherit;
+  --elp-font-body: inherit;
 }
 
 html { scroll-behavior: smooth; }
 
 body.elp-event-page {
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: var(--elp-font-body);
   background: var(--elp-dark);
   color: var(--elp-text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Heading / label typography — inherits from theme unless overridden */
+.elp-top-bar,
+.elp-event-badge,
+.elp-hero-text h1,
+.elp-event-detail .elp-detail-label,
+.elp-event-detail .elp-detail-value,
+.elp-form-section h2,
+.elp-form-section label,
+.elp-time-slots-date,
+.elp-time-slot,
+.elp-date-group-header,
+.elp-error-message button,
+.elp-confirmation h3,
+.elp-btn-submit,
+.elp-selected-time-badge {
+  font-family: var(--elp-font-heading);
 }
 
 /* === BACKGROUND TEXTURE === */
@@ -54,7 +74,6 @@ body.elp-event-page::before {
   text-transform: uppercase;
   color: var(--elp-gold);
   font-weight: 600;
-  font-family: 'Oswald', sans-serif;
   position: relative;
   z-index: 10;
 }
@@ -101,7 +120,6 @@ body.elp-event-page::before {
   border: 1px solid rgba(200,16,46,0.25);
   border-radius: 100px;
   padding: 8px 20px;
-  font-family: 'Oswald', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -125,7 +143,6 @@ body.elp-event-page::before {
   margin-bottom: 40px;
 }
 .elp-hero-text h1 {
-  font-family: 'Oswald', sans-serif;
   font-size: clamp(32px, 6vw, 52px);
   font-weight: 700;
   line-height: 1.1;
@@ -174,7 +191,6 @@ body.elp-event-page::before {
   margin-bottom: 8px;
 }
 .elp-event-detail .elp-detail-label {
-  font-family: 'Oswald', sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -182,7 +198,6 @@ body.elp-event-page::before {
   margin-bottom: 4px;
 }
 .elp-event-detail .elp-detail-value {
-  font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: var(--elp-white);
@@ -197,7 +212,6 @@ body.elp-event-page::before {
   animation: elpFadeUp 0.8s 0.55s ease both;
 }
 .elp-form-section h2 {
-  font-family: 'Oswald', sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -216,7 +230,6 @@ body.elp-event-page::before {
 /* === FORM FIELDS === */
 .elp-form-section label {
   display: block;
-  font-family: 'Oswald', sans-serif;
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -231,7 +244,6 @@ body.elp-event-page::before {
   border: 1px solid var(--elp-border);
   border-radius: 8px;
   padding: 14px 16px;
-  font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
   color: var(--elp-white);
   transition: border-color 0.2s, background 0.2s;
@@ -264,7 +276,6 @@ body.elp-event-page::before {
 }
 .elp-time-slots-date {
   display: block;
-  font-family: 'Oswald', sans-serif;
   font-size: 18px;
   font-weight: 600;
   color: var(--elp-white);
@@ -284,7 +295,6 @@ body.elp-event-page::before {
   border: 1px solid var(--elp-border);
   border-radius: 8px;
   padding: 14px 8px;
-  font-family: 'Oswald', sans-serif;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -312,7 +322,6 @@ body.elp-event-page::before {
 /* === DATE GROUP HEADERS === */
 .elp-date-group-header {
   grid-column: 1 / -1;
-  font-family: 'Oswald', sans-serif;
   font-size: 15px;
   font-weight: 600;
   color: var(--elp-gold);
@@ -356,6 +365,9 @@ body.elp-event-page::before {
   border: 1px solid rgba(200,16,46,0.2);
   border-radius: 8px;
 }
+#elpBookingError {
+  margin-top: 16px;
+}
 .elp-error-message p {
   color: var(--elp-text-muted);
   font-size: 14px;
@@ -367,7 +379,6 @@ body.elp-event-page::before {
   color: var(--elp-accent);
   border-radius: 6px;
   padding: 8px 20px;
-  font-family: 'Oswald', sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -399,7 +410,6 @@ body.elp-event-page::before {
   font-size: 28px;
 }
 .elp-confirmation h3 {
-  font-family: 'Oswald', sans-serif;
   font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -411,6 +421,9 @@ body.elp-event-page::before {
   color: var(--elp-text-muted);
   font-size: 14px;
   line-height: 1.6;
+}
+.elp-confirmation p + p {
+  margin-top: 12px;
 }
 .elp-confirmation .elp-booked-time {
   color: var(--elp-gold);
@@ -426,7 +439,6 @@ body.elp-event-page::before {
   padding: 0.75em 2.3em 0.75em 1em;
   border-radius: 100px;
   border: none;
-  font-family: 'Oswald', sans-serif;
   font-size: 16px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -477,7 +489,6 @@ body.elp-event-page::before {
   border-radius: 8px;
   padding: 12px 16px;
   margin-bottom: 24px;
-  font-family: 'Oswald', sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.05em;

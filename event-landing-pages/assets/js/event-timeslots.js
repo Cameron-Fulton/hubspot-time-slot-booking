@@ -76,17 +76,10 @@
   }
 
   function showError(message) {
-    var div = document.createElement('div');
-    div.className = 'elp-error-message';
-    var p = document.createElement('p');
-    p.textContent = message;
-    var btn = document.createElement('button');
-    btn.textContent = 'Try Again';
-    btn.addEventListener('click', loadSlots);
-    div.appendChild(p);
-    div.appendChild(btn);
-    timeSlotsGrid.innerHTML = '';
-    timeSlotsGrid.appendChild(div);
+    timeSlotsGrid.innerHTML =
+      '<div class="elp-error-message"><p>' + escapeHtml(message) +
+      '</p><button>Try Again</button></div>';
+    timeSlotsGrid.querySelector('button').addEventListener('click', loadSlots);
     timeSlotsLabel.textContent = 'Unable to load times';
     timeSlotsDate.textContent = '';
   }
@@ -274,7 +267,7 @@
             '<p>' + escapeHtml(firstName) + ', your appointment is confirmed for<br>' +
               '<span class="elp-booked-time">' + escapeHtml(formatDateHeading(dateStr)) + ' at ' + escapeHtml(timeLabel) + '</span>' +
             '</p>' +
-            '<p style="margin-top:12px;">' + escapeHtml(confirmText) + '</p>' +
+            '<p>' + escapeHtml(confirmText) + '</p>' +
           '</div>';
       })
       .catch(function (err) {
@@ -285,7 +278,6 @@
           errEl = document.createElement('div');
           errEl.id = 'elpBookingError';
           errEl.className = 'elp-error-message';
-          errEl.style.marginTop = '16px';
           bookingForm.appendChild(errEl);
         }
         errEl.innerHTML = '<p>' + escapeHtml(err.message) + '</p><p>Please try again.</p>';

@@ -68,6 +68,27 @@ class SettingsPage {
                     'default_value' => 'America/Denver',
                 ],
                 [
+                    'key'   => 'elp_tab_typography',
+                    'label' => __( 'Typography', 'event-landing-pages' ),
+                    'type'  => 'tab',
+                ],
+                [
+                    'key'          => 'elp_font_heading',
+                    'label'        => __( 'Heading Font', 'event-landing-pages' ),
+                    'name'         => 'elp_font_heading',
+                    'type'         => 'text',
+                    'placeholder'  => 'Oswald',
+                    'instructions' => __( 'Google Font family name for headings and labels. Leave blank to inherit from your theme.', 'event-landing-pages' ),
+                ],
+                [
+                    'key'          => 'elp_font_body',
+                    'label'        => __( 'Body Font', 'event-landing-pages' ),
+                    'name'         => 'elp_font_body',
+                    'type'         => 'text',
+                    'placeholder'  => 'Source Sans 3',
+                    'instructions' => __( 'Google Font family name for body text and form inputs. Leave blank to inherit from your theme.', 'event-landing-pages' ),
+                ],
+                [
                     'key'   => 'elp_tab_default_brand',
                     'label' => __( 'Default Brand', 'event-landing-pages' ),
                     'type'  => 'tab',

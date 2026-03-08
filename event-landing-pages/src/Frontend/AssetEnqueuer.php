@@ -22,21 +22,48 @@ class AssetEnqueuer {
             return;
         }
 
-        // Google Fonts.
-        wp_enqueue_style(
-            'elp-google-fonts',
-            'https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap',
-            [],
-            null
-        );
+        $font_heading = get_field( 'elp_font_heading', 'option' ) ?: '';
+        $font_body    = get_field( 'elp_font_body', 'option' ) ?: '';
+
+        $style_deps = [];
+
+        // Only load Google Fonts if custom fonts are configured.
+        if ( $font_heading || $font_body ) {
+            $families = [];
+            if ( $font_heading ) {
+                $families[] = 'family=' . rawurlencode( $font_heading ) . ':wght@400;500;600;700';
+            }
+            if ( $font_body ) {
+                $families[] = 'family=' . rawurlencode( $font_body ) . ':wght@300;400;500;600';
+            }
+            wp_enqueue_style(
+                'elp-google-fonts',
+                'https://fonts.googleapis.com/css2?' . implode( '&', $families ) . '&display=swap',
+                [],
+                null
+            );
+            $style_deps[] = 'elp-google-fonts';
+        }
 
         // Main stylesheet.
         wp_enqueue_style(
             'elp-frontend',
             ELP_PLUGIN_URL . 'assets/css/event-frontend.css',
-            [ 'elp-google-fonts' ],
+            $style_deps,
             ELP_VERSION
         );
+
+        // Inject font CSS custom properties when custom fonts are set.
+        if ( $font_heading || $font_body ) {
+            $vars = [];
+            if ( $font_heading ) {
+                $vars[] = '--elp-font-heading:\'' . esc_attr( $font_heading ) . '\', sans-serif';
+            }
+            if ( $font_body ) {
+                $vars[] = '--elp-font-body:\'' . esc_attr( $font_body ) . '\', sans-serif';
+            }
+            wp_add_inline_style( 'elp-frontend', ':root{' . implode( ';', $vars ) . '}' );
+        }
 
         $booking_method = get_field( 'elp_booking_method', $post_id ) ?: 'timeslots';
 
