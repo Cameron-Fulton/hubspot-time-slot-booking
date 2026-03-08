@@ -106,8 +106,11 @@ class AssetEnqueuer {
             true
         );
 
+        $portal_id = get_field( 'elp_hubspot_portal_id', $post_id )
+                     ?: get_field( 'elp_default_portal_id', 'option' );
+
         wp_localize_script( 'elp-hubspot-form', 'elpEventConfig', [
-            'portalId' => sanitize_text_field( get_field( 'elp_hubspot_portal_id', $post_id ) ?: '' ),
+            'portalId' => $portal_id ? (string) absint( $portal_id ) : '',
             'formId'   => sanitize_text_field( get_field( 'elp_hubspot_form_id', $post_id ) ?: '' ),
         ] );
     }

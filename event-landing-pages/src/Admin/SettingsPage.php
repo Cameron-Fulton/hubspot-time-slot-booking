@@ -18,10 +18,10 @@ class SettingsPage {
     }
 
     public function register_options_page(): void {
-        if ( ! function_exists( 'acf_add_options_page' ) ) {
+        if ( ! function_exists( '\acf_add_options_page' ) ) {
             return;
         }
-        acf_add_options_page( [
+        \acf_add_options_page( [
             'page_title' => __( 'Event Landing Pages Settings', 'event-landing-pages' ),
             'menu_title' => __( 'Settings', 'event-landing-pages' ),
             'menu_slug'  => 'elp-settings',
@@ -31,10 +31,10 @@ class SettingsPage {
     }
 
     public function register_fields(): void {
-        if ( ! function_exists( 'acf_add_options_page' ) ) {
+        if ( ! function_exists( '\acf_add_options_page' ) ) {
             return;
         }
-        acf_add_local_field_group( [
+        \acf_add_local_field_group( [
             'key'      => 'group_elp_global_settings',
             'title'    => __( 'Global Settings', 'event-landing-pages' ),
             'location' => [
@@ -48,16 +48,23 @@ class SettingsPage {
             ],
             'fields' => [
                 [
-                    'key'   => 'elp_tab_api',
-                    'label' => __( 'API', 'event-landing-pages' ),
+                    'key'   => 'elp_tab_hubspot',
+                    'label' => __( 'HubSpot', 'event-landing-pages' ),
                     'type'  => 'tab',
                 ],
                 [
+                    'key'          => 'elp_default_portal_id',
+                    'label'        => __( 'Default Portal ID', 'event-landing-pages' ),
+                    'name'         => 'elp_default_portal_id',
+                    'type'         => 'text',
+                    'instructions' => __( 'Your HubSpot Portal (Hub) ID. Find it in HubSpot under Settings → Account Management. Used as the default for form embeds.', 'event-landing-pages' ),
+                ],
+                [
                     'key'          => 'elp_hubspot_api_key',
-                    'label'        => __( 'HubSpot API Key', 'event-landing-pages' ),
+                    'label'        => __( 'Private App Access Token', 'event-landing-pages' ),
                     'name'         => 'elp_hubspot_api_key',
                     'type'         => 'password',
-                    'instructions' => __( 'Encrypted at rest. Used for server-side HubSpot API calls.', 'event-landing-pages' ),
+                    'instructions' => __( 'Optional. Encrypted at rest. Required for server-side HubSpot API calls (not needed for form embeds or time slot picker).', 'event-landing-pages' ),
                 ],
                 [
                     'key'           => 'elp_default_timezone',

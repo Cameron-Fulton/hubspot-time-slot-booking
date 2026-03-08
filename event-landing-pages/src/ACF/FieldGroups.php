@@ -14,7 +14,7 @@ class FieldGroups {
     }
 
     public function register(): void {
-        acf_add_local_field_group( [
+        \acf_add_local_field_group( [
             'key'      => 'group_elp_event_fields',
             'title'    => __( 'Event Configuration', 'event-landing-pages' ),
             'location' => [
@@ -360,6 +360,7 @@ class FieldGroups {
                 'label'             => __( 'HubSpot Portal ID', 'event-landing-pages' ),
                 'name'              => 'elp_hubspot_portal_id',
                 'type'              => 'text',
+                'instructions'      => __( 'Leave blank to use the default from global settings.', 'event-landing-pages' ),
                 'conditional_logic' => [
                     [
                         [

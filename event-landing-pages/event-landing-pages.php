@@ -40,5 +40,19 @@ if ( file_exists( $elp_autoloader ) ) {
     } );
 }
 
+// GitHub-based update checker.
+$elp_puc = ELP_PLUGIN_DIR . 'vendor/plugin-update-checker/plugin-update-checker.php';
+if ( file_exists( $elp_puc ) ) {
+    require_once $elp_puc;
+    $elp_update_checker = \YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+        'https://github.com/Cameron-Fulton/hubspot-time-slot-booking/',
+        ELP_PLUGIN_FILE,
+        'event-landing-pages'
+    );
+    // Plugin lives in a subdirectory of the repo, so download the
+    // plugin-only zip attached to each release instead of the source archive.
+    $elp_update_checker->getVcsApi()->enableReleaseAssets();
+}
+
 // Boot the plugin.
 add_action( 'plugins_loaded', [ \EventLandingPages\Plugin::class, 'instance' ] );
