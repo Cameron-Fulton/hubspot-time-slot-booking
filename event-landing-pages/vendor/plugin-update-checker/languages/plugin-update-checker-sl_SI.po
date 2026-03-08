@@ -16,33 +16,33 @@ msgstr ""
 "Language: sl_SI\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:395
+#: Puc/v5p6/Plugin/UpdateChecker.php:395
 msgid "Check for updates"
 msgstr "Preveri posodobitve"
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:548
+#: Puc/v5p6/Plugin/UpdateChecker.php:548
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "Vtičnik %s je že posodobljen."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:550
+#: Puc/v5p6/Plugin/UpdateChecker.php:550
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "Nova različica vtičnika %s je na razpolago."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:552
+#: Puc/v5p6/Plugin/UpdateChecker.php:552
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
-msgstr "Ne morem ugotoviti če se za vtičnik %s na razpolago posodobitve."
+msgstr "Ne morem ugotoviti, če so na razpolago posodobitve za vtičnik %s."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:558
+#: Puc/v5p6/Plugin/UpdateChecker.php:558
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "Neznan status preverjanja posodobitev za \"%s\""
 
-#: Puc/v4p3/Vcs/PluginUpdateChecker.php:95
+#: Puc/v5p6/Vcs/PluginUpdateChecker.php:95
 msgid "There is no changelog available."
 msgstr "Dnevnik sprememb ni na razpolago."

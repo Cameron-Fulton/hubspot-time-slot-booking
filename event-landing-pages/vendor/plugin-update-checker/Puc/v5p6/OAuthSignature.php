@@ -87,15 +87,22 @@ if ( !class_exists(OAuthSignature::class, false) ):
 				try {
 					$rand = random_bytes(16);
 				} catch (\Exception $ex) {
-					//Fall back to mt_rand (below).
+					//Fall back to openssl or mt_rand (below).
+				}
+			}
+			if ( $rand === null && is_callable('openssl_random_pseudo_bytes') ) {
+				$rand = openssl_random_pseudo_bytes(16);
+				if ( $rand === false ) {
+					$rand = null;
 				}
 			}
 			if ( $rand === null ) {
 				//phpcs:ignore WordPress.WP.AlternativeFunctions.rand_mt_rand
-				$rand = function_exists('wp_rand') ? wp_rand() : mt_rand();
+				$intRand = function_exists('wp_rand') ? wp_rand() : mt_rand();
+				$rand = $intRand . uniqid('', true);
 			}
 
-			return md5($mt . '_' . $rand);
+			return hash('sha256', $mt . '_' . $rand);
 		}
 	}
 

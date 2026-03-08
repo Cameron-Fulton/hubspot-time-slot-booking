@@ -128,9 +128,9 @@ if ( !class_exists(PluginInfo::class, false) ):
 		protected function getFormattedAuthor() {
 			if ( !empty($this->author_homepage) ){
 				/** @noinspection HtmlUnknownTarget */
-				return sprintf('<a href="%s">%s</a>', $this->author_homepage, $this->author);
+				return sprintf('<a href="%s">%s</a>', esc_url($this->author_homepage), esc_html($this->author));
 			}
-			return $this->author;
+			return esc_html($this->author);
 		}
 	}
 

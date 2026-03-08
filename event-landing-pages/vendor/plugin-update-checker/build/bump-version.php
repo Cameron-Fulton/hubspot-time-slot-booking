@@ -40,7 +40,13 @@ function updateVersionNumbers($filePath, $oldVersion, $newVersion) {
 		versionToInfix($newVersion),
 		$content
 	);
-	file_put_contents($filePath, $content);
+	$result = file_put_contents($filePath, $content);
+	if ( $result === false ) {
+		$error = error_get_last();
+		$errorMsg = isset($error['message']) ? $error['message'] : 'Unknown error';
+		echo "Failed to write file: $filePath ($errorMsg)\n";
+		exit(1);
+	}
 }
 
 //Check for uncommitted changes.
@@ -57,7 +63,13 @@ if ( !empty($output) ) {
 }
 
 //Get the current version.
-$currentVersionDir = glob($repositoryRoot . '/Puc/v*p*')[0];
+$versionDirMatches = glob($repositoryRoot . '/Puc/v*p*');
+if ( $versionDirMatches === false || count($versionDirMatches) === 0 ) {
+	echo "Failed to find the current version's subdirectory (no glob matches).\n";
+	chdir($oldDir);
+	exit(1);
+}
+$currentVersionDir = $versionDirMatches[0];
 if ( !is_dir($currentVersionDir) ) {
 	echo "Failed to find the current version's subdirectory.\n";
 	chdir($oldDir);
@@ -80,10 +92,20 @@ $newVersionInfix = versionToInfix($newVersion);
 $oldVersion = $currentVersion;
 
 //Create a new branch for the version update.
-exec("git checkout -b \"version-bump-$newVersion\"");
+exec("git checkout -b \"version-bump-$newVersion\"", $branchOutput, $branchStatus);
+if ( $branchStatus !== 0 ) {
+	echo "Failed to create branch version-bump-$newVersion:\n" . implode("\n", $branchOutput) . "\n";
+	chdir($oldDir);
+	exit(1);
+}
 
 //Rename the Puc/vXpY directory using Git.
-exec("git mv \"Puc/$oldVersionInfix\" \"Puc/$newVersionInfix\"");
+exec("git mv \"Puc/$oldVersionInfix\" \"Puc/$newVersionInfix\"", $mvOutput, $mvStatus);
+if ( $mvStatus !== 0 ) {
+	echo "Failed to git mv Puc/$oldVersionInfix to Puc/$newVersionInfix:\n" . implode("\n", $mvOutput) . "\n";
+	chdir($oldDir);
+	exit(1);
+}
 
 //Define the list of directories to search
 $directoriesToSearch = ['css', 'js', 'Puc'];

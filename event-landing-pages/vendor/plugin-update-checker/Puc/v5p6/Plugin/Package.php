@@ -136,7 +136,7 @@ if ( !class_exists(Package::class, false) ):
 				//This can happen if the plugin filename is wrong.
 				$this->updateChecker->triggerError(
 					sprintf(
-						"Can't to read the plugin header for '%s'. The file does not exist.",
+						"Can't read the plugin header for '%s'. The file does not exist.",
 						$this->updateChecker->pluginFile
 					),
 					E_USER_WARNING
@@ -160,13 +160,13 @@ if ( !class_exists(Package::class, false) ):
 		 *
 		 * @return bool
 		 */
-		public function isMuPlugin() {
-			static $cachedResult = null;
+		private $isMuPluginCache = null;
 
-			if ( $cachedResult === null ) {
+		public function isMuPlugin() {
+			if ( $this->isMuPluginCache === null ) {
 				if ( !defined('WPMU_PLUGIN_DIR') || !is_string(WPMU_PLUGIN_DIR) ) {
-					$cachedResult = false;
-					return $cachedResult;
+					$this->isMuPluginCache = false;
+					return $this->isMuPluginCache;
 				}
 
 				//Convert both paths to the canonical form before comparison.
@@ -178,10 +178,10 @@ if ( !class_exists(Package::class, false) ):
 					$pluginPath  = PucFactory::normalizePath($this->pluginAbsolutePath);
 				}
 
-				$cachedResult = (strpos($pluginPath, $muPluginDir) === 0);
+				$this->isMuPluginCache = (strpos($pluginPath, $muPluginDir) === 0);
 			}
 
-			return $cachedResult;
+			return $this->isMuPluginCache;
 		}
 	}
 

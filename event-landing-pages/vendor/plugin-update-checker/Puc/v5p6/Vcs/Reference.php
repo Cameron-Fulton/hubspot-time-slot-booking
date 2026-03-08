@@ -8,7 +8,7 @@ if ( !class_exists(Reference::class, false) ):
 	 * that only exists to provide a limited degree of type checking.
 	 *
 	 * @property string $name
-	 * @property string|null version
+	 * @property string|null $version
 	 * @property string $downloadUrl
 	 * @property string $updated
 	 *

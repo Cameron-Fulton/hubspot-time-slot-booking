@@ -14,7 +14,13 @@ class PucReadmeParser {
 	}
 
 	function parse_readme( $file ) {
-		$file_contents = @implode('', @file($file));
+		if ( !is_readable($file) ) {
+			return array();
+		}
+		$file_contents = file_get_contents($file);
+		if ( $file_contents === false ) {
+			return array();
+		}
 		return $this->parse_readme_contents( $file_contents );
 	}
 
@@ -127,7 +133,8 @@ class PucReadmeParser {
 		$_sections = preg_split('/^[\s]*==[\s]*(.+?)[\s]*==/m', $file_contents, -1, PREG_SPLIT_DELIM_CAPTURE|PREG_SPLIT_NO_EMPTY);
 
 		$sections = array();
-		for ( $i=0; $i < count($_sections); $i +=2 ) {
+		$totalSections = count($_sections);
+		for ( $i=0; $i < $totalSections; $i +=2 ) {
 			$title = $this->sanitize_text( $_sections[$i] );
 			if ( isset($_sections[$i+1]) ) {
 				$content = preg_replace('/(^[\s]*)=[\s]+(.+?)[\s]+=/m', '$1<h4>$2</h4>', $_sections[$i+1]);

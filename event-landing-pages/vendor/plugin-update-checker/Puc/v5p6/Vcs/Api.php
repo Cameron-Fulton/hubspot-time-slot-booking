@@ -151,25 +151,29 @@ if ( !class_exists(Api::class, false) ):
 		 *
 		 * @return string
 		 */
+		/**
+		 * @var string|null Cached local readme file name.
+		 */
+		protected $localReadmeName = null;
+
 		public function getLocalReadmeName() {
-			static $fileName = null;
-			if ( $fileName !== null ) {
-				return $fileName;
+			if ( $this->localReadmeName !== null ) {
+				return $this->localReadmeName;
 			}
 
-			$fileName = 'readme.txt';
+			$this->localReadmeName = 'readme.txt';
 			if ( isset($this->localDirectory) ) {
 				$files = scandir($this->localDirectory);
 				if ( !empty($files) ) {
 					foreach ($files as $possibleFileName) {
 						if ( strcasecmp($possibleFileName, 'readme.txt') === 0 ) {
-							$fileName = $possibleFileName;
+							$this->localReadmeName = $possibleFileName;
 							break;
 						}
 					}
 				}
 			}
-			return $fileName;
+			return $this->localReadmeName;
 		}
 
 		/**

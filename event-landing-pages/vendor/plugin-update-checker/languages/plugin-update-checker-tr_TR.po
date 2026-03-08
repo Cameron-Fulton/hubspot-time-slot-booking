@@ -16,33 +16,33 @@ msgstr ""
 "Language: tr\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:395
+#: Puc/v5p6/Plugin/UpdateChecker.php:395
 msgid "Check for updates"
 msgstr "Güncellemeleri kontrol et"
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:548
+#: Puc/v5p6/Plugin/UpdateChecker.php:548
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "%s eklentisi güncel."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:550
+#: Puc/v5p6/Plugin/UpdateChecker.php:550
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "%s eklentisinin yeni bir sürümü mevcut."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:552
+#: Puc/v5p6/Plugin/UpdateChecker.php:552
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr "%s için güncelleme olup olmadığı belirlenemedi."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:558
+#: Puc/v5p6/Plugin/UpdateChecker.php:558
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "Bilinmeyen güncelleme denetleyicisi durumu \"%s\""
 
-#: Puc/v4p3/Vcs/PluginUpdateChecker.php:95
+#: Puc/v5p6/Vcs/PluginUpdateChecker.php:95
 msgid "There is no changelog available."
 msgstr "Kullanılabilir bir değişiklik yok."

@@ -16,27 +16,27 @@ msgstr ""
 "Language: da_DK\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:358
+#: Puc/v5p6/Plugin/UpdateChecker.php:358
 msgid "Check for updates"
 msgstr "Undersøg for opdateringer"
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:405
+#: Puc/v5p6/Plugin/UpdateChecker.php:405
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "Plugin'et %s er allerede opdateret."
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:407
+#: Puc/v5p6/Plugin/UpdateChecker.php:407
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "En ny version af plugin'et %s er tilgængelig."
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:409
+#: Puc/v5p6/Plugin/UpdateChecker.php:409
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "Ukendt opdateringsstatus: \"%s\""
 
-#: Puc/v4p1/Vcs/PluginUpdateChecker.php:83
+#: Puc/v5p6/Vcs/PluginUpdateChecker.php:83
 msgid "There is no changelog available."
 msgstr "Der er ingen ændringslog tilgængelig."

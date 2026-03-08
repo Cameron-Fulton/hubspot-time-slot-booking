@@ -1137,6 +1137,9 @@ if ( !class_exists(UpdateChecker::class, false) ):
 			$sourceFiles = $wp_filesystem->dirlist($remoteSource);
 			if ( is_array($sourceFiles) ) {
 				$sourceFiles = array_keys($sourceFiles);
+				if ( empty($sourceFiles) ) {
+					return false;
+				}
 				$firstFilePath = trailingslashit($remoteSource) . $sourceFiles[0];
 				return (count($sourceFiles) > 1) || (!$wp_filesystem->is_dir($firstFilePath));
 			}

@@ -133,7 +133,7 @@ if ( !class_exists(Extension::class, false) ):
 							printf('<dt>Response body:</dt><dd><pre>%s</pre></dd>', esc_html($body));
 						}
 					}
-					echo '<dl>';
+					echo '</dl>';
 				}
 			}
 

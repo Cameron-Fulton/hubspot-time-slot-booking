@@ -81,7 +81,7 @@ Change the `version` number in the JSON file and make sure that `download_url` p
 
 By default, the library will check the specified URL for changes every 12 hours. You can force it to check immediately by clicking the "Check for updates" link on the "Plugins" page (it's next to the "Visit plugin site" link). Themes don't have that link, but you can also trigger an update check like this:
  
- 1. Install [Debug Bar](https://srd.wordpress.org/plugins/debug-bar/).
+ 1. Install [Debug Bar](https://wordpress.org/plugins/debug-bar/).
  2. Click the "Debug" menu in the Admin Bar (a.k.a Toolbar).
  3. Open the "PUC (your-slug)" panel. 
  4. Click the "Check Now" button.  

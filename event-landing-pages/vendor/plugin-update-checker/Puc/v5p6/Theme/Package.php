@@ -43,7 +43,7 @@ if ( !class_exists(Package::class, false) ):
 		 */
 		public function getHeaderValue($headerName, $defaultValue = '') {
 			$value = $this->theme->get($headerName);
-			if ( ($headerName === false) || ($headerName === '') ) {
+			if ( ($value === false) || ($value === '') ) {
 				return $defaultValue;
 			}
 			return $value;

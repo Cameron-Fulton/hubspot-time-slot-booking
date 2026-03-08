@@ -175,9 +175,11 @@ if ( !class_exists(GitLabApi::class, false) ):
 			}
 
 			//Use the first source code archive that's in ZIP format.
-			foreach ($release->assets->sources as $source) {
-				if ( isset($source->format) && ($source->format === 'zip') ) {
-					return $source->url;
+			if ( isset($release->assets, $release->assets->sources) && is_iterable($release->assets->sources) ) {
+				foreach ($release->assets->sources as $source) {
+					if ( isset($source->format) && ($source->format === 'zip') ) {
+						return $source->url;
+					}
 				}
 			}
 

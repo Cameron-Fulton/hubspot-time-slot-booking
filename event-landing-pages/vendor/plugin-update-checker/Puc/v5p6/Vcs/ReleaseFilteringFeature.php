@@ -67,6 +67,16 @@ if ( !trait_exists(ReleaseFilteringFeature::class, false) ) :
 			$releaseTypes = Api::RELEASE_FILTER_SKIP_PRERELEASE,
 			$maxReleasesToExamine = 20
 		) {
+			//Validate the regex before using it.
+			if ( !is_string($regex) || strlen($regex) > 1000 ) {
+				throw new \InvalidArgumentException('Invalid or excessively long regex pattern.');
+			}
+			//Test that it's a valid PCRE pattern.
+			$testResult = @preg_match($regex, '');
+			if ( $testResult === false || preg_last_error() !== PREG_NO_ERROR ) {
+				throw new \InvalidArgumentException('Invalid PCRE regex pattern: ' . $regex);
+			}
+
 			return $this->setReleaseFilter(
 				function ($versionNumber) use ($regex) {
 					return (preg_match($regex, $versionNumber) === 1);

@@ -7,7 +7,7 @@ if ( !class_exists(InstalledPackage::class, false) ):
 	 * This class represents a currently installed plugin or theme.
 	 *
 	 * Not to be confused with the "package" field in WP update API responses that contains
-	 * the download URL of a the new version.
+	 * the download URL of the new version.
 	 */
 	abstract class InstalledPackage {
 		/**

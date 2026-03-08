@@ -19,27 +19,27 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Loco-Parser: loco_parse_po"
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:358
+#: Puc/v5p6/Plugin/UpdateChecker.php:358
 msgid "Check for updates"
 msgstr "Zkontrolovat aktualizace"
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:405
+#: Puc/v5p6/Plugin/UpdateChecker.php:405
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "Plugin %s je aktuální."
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:407
+#: Puc/v5p6/Plugin/UpdateChecker.php:407
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "Nová verze pluginu %s je dostupná."
 
-#: Puc/v4p1/Plugin/UpdateChecker.php:409
+#: Puc/v5p6/Plugin/UpdateChecker.php:409
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "Neznámý status kontroly aktualizací \"%s\""
 
-#: Puc/v4p1/Vcs/PluginUpdateChecker.php:83
+#: Puc/v5p6/Vcs/PluginUpdateChecker.php:83
 msgid "There is no changelog available."
 msgstr "Changelog není dostupný."

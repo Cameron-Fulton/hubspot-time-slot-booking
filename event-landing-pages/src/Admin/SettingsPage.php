@@ -31,7 +31,7 @@ class SettingsPage {
     }
 
     public function register_fields(): void {
-        if ( ! function_exists( '\acf_add_options_page' ) ) {
+        if ( ! function_exists( '\acf_add_local_field_group' ) ) {
             return;
         }
         \acf_add_local_field_group( [

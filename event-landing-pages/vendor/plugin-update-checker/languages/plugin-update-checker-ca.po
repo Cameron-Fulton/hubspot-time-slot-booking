@@ -16,33 +16,33 @@ msgstr ""
 "Language: ca\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:395
+#: Puc/v5p6/Plugin/UpdateChecker.php:395
 msgid "Check for updates"
 msgstr "Comprova si hi ha actualitzacions"
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:548
+#: Puc/v5p6/Plugin/UpdateChecker.php:548
 #, php-format
 msgctxt "the plugin title"
 msgid "The %s plugin is up to date."
 msgstr "L’extensió %s està actualitzada."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:550
+#: Puc/v5p6/Plugin/UpdateChecker.php:550
 #, php-format
 msgctxt "the plugin title"
 msgid "A new version of the %s plugin is available."
 msgstr "Una nova versió de l’extensió %s està disponible."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:552
+#: Puc/v5p6/Plugin/UpdateChecker.php:552
 #, php-format
 msgctxt "the plugin title"
 msgid "Could not determine if updates are available for %s."
 msgstr "No s’ha pogut determinar si hi ha actualitzacions per a %s."
 
-#: Puc/v4p3/Plugin/UpdateChecker.php:558
+#: Puc/v5p6/Plugin/UpdateChecker.php:558
 #, php-format
 msgid "Unknown update checker status \"%s\""
 msgstr "Estat del comprovador d’actualitzacions desconegut \"%s\""
 
-#: Puc/v4p3/Vcs/PluginUpdateChecker.php:95
+#: Puc/v5p6/Vcs/PluginUpdateChecker.php:95
 msgid "There is no changelog available."
 msgstr "No hi ha cap registre de canvis disponible."

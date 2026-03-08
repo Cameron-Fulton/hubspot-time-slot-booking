@@ -23,7 +23,7 @@ if ( !class_exists(UpgraderStatus::class, false) ):
 		}
 
 		/**
-		 * Is there and update being installed RIGHT NOW, for a specific plugin?
+		 * Is there an update being installed RIGHT NOW, for a specific plugin?
 		 *
 		 * Caution: This method is unreliable. WordPress doesn't make it easy to figure out what it is upgrading,
 		 * and upgrader implementations are liable to change without notice.

@@ -184,7 +184,7 @@ class CustomPathRouter {
 
         // Strip the site's subdirectory prefix if WordPress is in a subfolder.
         $home_path = wp_parse_url( home_url(), PHP_URL_PATH );
-        if ( $home_path && str_starts_with( $path, $home_path ) ) {
+        if ( $home_path && strpos( $path, $home_path ) === 0 ) {
             $path = substr( $path, strlen( $home_path ) );
         }
 

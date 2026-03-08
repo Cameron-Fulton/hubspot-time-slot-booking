@@ -68,7 +68,7 @@ if ( !trait_exists(ReleaseAssetSupport::class, false) ) :
 			if ( !is_string($name) ) {
 				return false;
 			}
-			return (bool)preg_match($this->assetFilterRegex, $releaseAsset->name);
+			return (bool)preg_match($this->assetFilterRegex, $name);
 		}
 
 		/**

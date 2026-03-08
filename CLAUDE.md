@@ -27,7 +27,15 @@ Static HTML landing page for a $99 Comprehensive Hormone Panel event promotion, 
 - HubSpot form embed for sign-ups
 - HubSpot time slot picker (custom calendar widget replacing default HubSpot calendar UI)
 
+## WordPress Plugin (`event-landing-pages/`)
+- Generic/white-label WordPress plugin for event landing pages
+- CPT: `elp_event`, prefix: `elp_`, namespace: `EventLandingPages`
+- Requires ACF PRO, PSR-4 autoloading with manual fallback
+- GitHub update checker (PUC) with `enableReleaseAssets()` for monorepo compatibility
+- **Releasing:** See [`RELEASING.md`](RELEASING.md) for version bump, zip build, and GitHub release workflow
+
 ## Conventions
-- Everything lives in a single `index.html` file (inline styles and scripts)
+- Landing page: single `index.html` file (inline styles and scripts)
+- Plugin: PSR-4 structure under `event-landing-pages/src/`
 - Mobile-responsive design with media queries
 - No build tools, no bundler, no package manager
