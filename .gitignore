@@ -12,3 +12,4 @@ snippet-*.json
 
 # Claude Code local files
 .claude/
+CLAUDE.md
