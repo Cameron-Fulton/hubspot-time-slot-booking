@@ -15,6 +15,15 @@ class HubSpotProxy {
         add_action( 'rest_api_init', [ $this, 'register_routes' ] );
     }
 
+    /**
+     * Validate that a value is a recognised IANA timezone identifier.
+     */
+    public function validate_timezone( $value ): bool {
+        static $zones;
+        $zones ??= \DateTimeZone::listIdentifiers();
+        return in_array( $value, $zones, true );
+    }
+
     public function register_routes(): void {
         register_rest_route( self::NAMESPACE, '/availability', [
             'methods'             => 'GET',
@@ -30,6 +39,7 @@ class HubSpotProxy {
                     'required'          => true,
                     'type'              => 'string',
                     'sanitize_callback' => 'sanitize_text_field',
+                    'validate_callback' => [ $this, 'validate_timezone' ],
                 ],
                 'monthOffset' => [
                     'required'          => false,
@@ -54,6 +64,7 @@ class HubSpotProxy {
                     'required'          => true,
                     'type'              => 'string',
                     'sanitize_callback' => 'sanitize_text_field',
+                    'validate_callback' => [ $this, 'validate_timezone' ],
                 ],
             ],
         ] );
@@ -64,7 +75,12 @@ class HubSpotProxy {
             'permission_callback' => [ $this, 'verify_nonce' ],
             'args'                => [
                 'slug'           => [ 'required' => true, 'type' => 'string' ],
-                'timezone'       => [ 'required' => true, 'type' => 'string' ],
+                'timezone'       => [
+                    'required'          => true,
+                    'type'              => 'string',
+                    'sanitize_callback' => 'sanitize_text_field',
+                    'validate_callback' => [ $this, 'validate_timezone' ],
+                ],
                 'duration'       => [ 'required' => true, 'type' => 'integer' ],
                 'startMillisUtc' => [ 'required' => true, 'type' => 'integer' ],
                 'formFields'     => [ 'required' => true, 'type' => 'array' ],

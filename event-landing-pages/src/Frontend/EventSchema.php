@@ -59,6 +59,7 @@ class EventSchema {
 		$description   = get_field( 'elp_event_description', $post_id );
 		$location_name = get_field( 'elp_location_name', $post_id );
 		$location_addr = get_field( 'elp_location_address', $post_id );
+		$location_url  = get_field( 'elp_location_url', $post_id );
 		$event_price   = get_field( 'elp_event_price', $post_id );
 		$event_image   = get_field( 'elp_event_image', $post_id );
 
@@ -97,6 +98,9 @@ class EventSchema {
 
 			if ( $location_name ) {
 				$location['name'] = $location_name;
+			}
+			if ( $location_url ) {
+				$location['url'] = $location_url;
 			}
 			if ( $location_addr ) {
 				$location['address'] = [

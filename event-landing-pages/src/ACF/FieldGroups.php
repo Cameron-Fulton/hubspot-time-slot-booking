@@ -239,6 +239,13 @@ class FieldGroups {
                 'type'  => 'text',
             ],
             [
+                'key'          => 'elp_location_url',
+                'label'        => __( 'Location URL', 'event-landing-pages' ),
+                'name'         => 'elp_location_url',
+                'type'         => 'url',
+                'instructions' => __( 'Link for the location name (e.g. Google Maps or venue website).', 'event-landing-pages' ),
+            ],
+            [
                 'key'           => 'elp_event_price',
                 'label'         => __( 'Event Price', 'event-landing-pages' ),
                 'name'          => 'elp_event_price',

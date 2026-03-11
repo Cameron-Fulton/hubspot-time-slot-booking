@@ -28,6 +28,7 @@ $description    = get_field( 'elp_event_description', $post_id ) ?: '';
 $duration_label = get_field( 'elp_duration_label', $post_id ) ?: '';
 $location_name  = get_field( 'elp_location_name', $post_id ) ?: '';
 $location_addr  = get_field( 'elp_location_address', $post_id ) ?: '';
+$location_url   = get_field( 'elp_location_url', $post_id ) ?: '';
 $event_start    = get_field( 'elp_event_start', $post_id ) ?: '';
 $event_end      = get_field( 'elp_event_end', $post_id ) ?: '';
 $cta_label      = get_field( 'elp_cta_label', $post_id ) ?: 'Reserve My Spot';
@@ -162,7 +163,13 @@ foreach ( $color_fields as $field_key => $css_var ) {
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#E84C6A" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" fill="#E84C6A"/></svg>
             </div>
             <div class="elp-detail-label"><?php esc_html_e( 'Location', 'event-landing-pages' ); ?></div>
-            <div class="elp-detail-value"><?php echo esc_html( $location_name ); ?></div>
+            <div class="elp-detail-value">
+                <?php if ( $location_url ) : ?>
+                    <a href="<?php echo esc_url( $location_url ); ?>" target="_blank" rel="noopener"><?php echo esc_html( $location_name ); ?></a>
+                <?php else : ?>
+                    <?php echo esc_html( $location_name ); ?>
+                <?php endif; ?>
+            </div>
         </div>
         <?php endif; ?>
 

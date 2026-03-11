@@ -202,6 +202,10 @@ body.elp-event-page::before {
   font-weight: 600;
   color: var(--elp-white);
 }
+.elp-event-detail .elp-detail-value a {
+  color: inherit;
+  text-decoration: underline;
+}
 
 /* === FORM SECTION === */
 .elp-form-section {
